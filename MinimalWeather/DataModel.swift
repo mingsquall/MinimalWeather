@@ -17,6 +17,7 @@ class DataModel {
     private var _location: String?
     private var _weather: String?
     private var _temp: String?
+    private var _weatherImage: String?
     
     typealias JSONStandard = Dictionary<String, AnyObject>
 
@@ -49,6 +50,12 @@ class DataModel {
         return _weather ?? "Weather Invalid"
     }
     
+    var weatherImage: String {
+        return _weatherImage ?? "Image Invalid"
+    }
+    
+    
+    
     
     func downloadData(completed: @escaping ()-> ()) {
         
@@ -60,7 +67,7 @@ class DataModel {
                 let main = dict["main"] as? JSONStandard,
                 let temp = main["temp"] as? Double,
                 let weatherArray = dict["weather"] as? [JSONStandard],
-                
+                let weatherImage = weatherArray[0]["icon"] as? String,
                 let weather = weatherArray[0]["main"] as? String,
                 let name = dict["name"] as? String,
                 let sys = dict["sys"] as? JSONStandard,
@@ -71,6 +78,7 @@ class DataModel {
                 self._weather = weather
                 self._location = "\(name), \(country)"
                 self._date = dt
+                self._weatherImage = weatherImage
             }
             
             completed()

@@ -8,16 +8,17 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class DetailViewController: UIViewController {
 
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var weatherLabel: UILabel!
     @IBOutlet weak var tempLabel: UILabel!
-    
     @IBOutlet weak var weatherImage: UIImageView!
     
     var weather = DataModel()
+    
+    
     
     
     override func viewDidLoad() {
@@ -38,7 +39,7 @@ class ViewController: UIViewController {
         tempLabel.text = "\(weather.temp)"
         locationLabel.text = weather.location
         weatherLabel.text = weather.weather
-        weatherImage.image = UIImage(named: weather.weather)
+        weatherImage.image = UIImage(named: weather.weatherImage)
     }
     
     
