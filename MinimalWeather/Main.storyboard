@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Detail View Controller-->
+        <!--WeatherDetail-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="DetailViewController" customModule="MinimalWeather" customModuleProvider="target" sceneMemberID="viewController">
@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="vEs-Sd-Uda" userLabel="Top Stack View">
-                                <rect key="frame" x="68" y="65" width="240" height="60"/>
+                                <rect key="frame" x="68" y="109" width="240" height="60"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KiT-zY-LyY">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="39.5"/>
@@ -43,14 +43,14 @@
                                 </constraints>
                             </stackView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bea-8F-7RD">
-                                <rect key="frame" x="68" y="160" width="240" height="240"/>
+                                <rect key="frame" x="68" y="204" width="240" height="240"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="240" id="8qB-WN-bmX"/>
                                     <constraint firstAttribute="width" constant="240" id="Byt-yg-p2h"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="plP-zl-Czv" userLabel="Down Stack View">
-                                <rect key="frame" x="68" y="435" width="240" height="60"/>
+                                <rect key="frame" x="68" y="479" width="240" height="60"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="weather" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5t3-o7-wUT">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="39.5"/>
@@ -82,6 +82,10 @@
                             <constraint firstItem="Bea-8F-7RD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xP7-ad-L8h"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="WeatherDetail" id="i1O-pG-gue" userLabel="WeatherDetail">
+                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="X2h-L8-gWv"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="aPo-7i-mHK"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="dateLabel" destination="WAx-Xu-Tgp" id="rSp-aw-r4U"/>
                         <outlet property="locationLabel" destination="KiT-zY-LyY" id="Oor-lR-hlQ"/>
@@ -92,7 +96,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1056.8" y="123.68815592203899"/>
+            <point key="canvasLocation" x="2575.1999999999998" y="106.59670164917542"/>
         </scene>
     </scenes>
 </document>

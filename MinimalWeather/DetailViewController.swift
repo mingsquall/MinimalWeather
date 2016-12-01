@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, UINavigationControllerDelegate {
 
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
@@ -24,9 +24,13 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        weather.downloadData {
+
+
+        weather.downloadData() {
+
             self.updateUI()
         }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,6 +45,10 @@ class DetailViewController: UIViewController {
         weatherLabel.text = weather.weather
         weatherImage.image = UIImage(named: weather.weatherImage)
     }
+    
+//    func changeLocation() {
+//        weather.location = "Beijing"
+//    }
     
     
 }

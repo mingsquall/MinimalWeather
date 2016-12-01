@@ -22,7 +22,10 @@ class DataModel {
     typealias JSONStandard = Dictionary<String, AnyObject>
 
     // convert to URL
-    let url = URL(string: "http://api.openweathermap.org/data/2.5/weather?q=Beijing&appid=98b9b4ac888dd44d416398fd5d5fbfd6")!
+    
+    
+
+    
     
     var date:String {
         
@@ -36,13 +39,20 @@ class DataModel {
     }
     
     var temp: String {
-        // 避免nil
+
+            // 避免nil
         return _temp ?? "0 °C"
+
     }
     
     var location: String {
         // 避免nil
-        return _location ?? "Location Invalid"
+        get{
+            return _location ?? "Location Invalid"
+        }
+        set{
+            _location = location
+        }
     }
     
     var weather: String {
@@ -59,10 +69,13 @@ class DataModel {
     
     func downloadData(completed: @escaping ()-> ()) {
         
+        let url = URL(string: "http://api.openweathermap.org/data/2.5/weather?q=beijing&appid=98b9b4ac888dd44d416398fd5d5fbfd6")!
+        
         Alamofire.request(url).responseJSON(completionHandler: {
             response in
-            let result = response.result
             
+            let result = response.result
+        
             if let dict = result.value as? JSONStandard,
                 let main = dict["main"] as? JSONStandard,
                 let temp = main["temp"] as? Double,

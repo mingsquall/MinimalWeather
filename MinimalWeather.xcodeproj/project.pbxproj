@@ -94,8 +94,16 @@
 				18E463661DEB2E16000A09FF /* Main.storyboard */,
 				18E4635D1DEB2DBE000A09FF /* LaunchScreen.storyboard */,
 				18E463601DEB2DBE000A09FF /* Info.plist */,
+				18F34B3A1DEFC8C000146DE4 /* Prepare */,
 			);
 			path = MinimalWeather;
+			sourceTree = "<group>";
+		};
+		18F34B3A1DEFC8C000146DE4 /* Prepare */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Prepare;
 			sourceTree = "<group>";
 		};
 		6B762D27C36C81CFC35F54D9 /* Pods */ = {
